@@ -1,0 +1,9 @@
+﻿<Application x:Class="SysTech.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SysTech"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="/styles/colors.xaml"/>
+    </Application.Resources>
+</Application>

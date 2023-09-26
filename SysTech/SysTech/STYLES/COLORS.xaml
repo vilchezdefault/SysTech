@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="PrimaryBlueColor" Color="#348ef6"/>
+    <SolidColorBrush x:Key="SecundaryblueColor" Color="#eff2ff"/>
+    <SolidColorBrush x:Key="PrimaryTextColor" Color="#ffff"/>
+    <SolidColorBrush x:Key="SecundaryTextColor" Color="#bbc1d1"/>
+    <SolidColorBrush x:Key="PrimaryGreyColor" Color="#bbc1d1"/>
+    <SolidColorBrush x:Key="BlueOcean" Color="#3E5151"/>
+    <SolidColorBrush x:Key="BeishColor" Color="#bdc3c7"/>
+
+    <Color x:Key="primaryBlueColor">#348ef6</Color>
+    <Color x:Key="blueOcean">#3E5151</Color>
+    <Color x:Key="Gray">#bdc3c7</Color>
+    <Color x:Key="Violeta">#654ea3</Color>
+    <Color x:Key="Pinky">#eaafc8</Color>
+    <Color x:Key="beish">#FFEFBA</Color>
+    <Color x:Key="blanco">#FFFFFF</Color>
+    
+    
+    <!--Paleta2 dashboard-->
+
+    <Color x:Key="BHueso">#F5EEEF</Color>
+    <Color x:Key="Cafecillo">#B39788</Color>
+    <Color x:Key="Rojo">#DC1E14</Color>
+    <Color x:Key="Caffe">#A48660</Color>
+    <Color x:Key="Negro">#121314</Color>
+
+
+    <!--<Color x:Key="primaryBlueColor">#2c3e50</Color>
+    <Color x:Key="primaryBlueColor">#348ef6</Color>
+    <Color x:Key="primaryBlueColor">#348ef6</Color>
+    <Color x:Key="primaryBlueColor">#348ef6</Color>
+    <Color x:Key="primaryBlueColor">#348ef6</Color>-->
+
+
+</ResourceDictionary>
