@@ -47,7 +47,9 @@ namespace SysTech
 
         private void btnCOU_Click(object sender, RoutedEventArgs e)
         {
-
+            var window = new COUWindow();
+            this.Close();
+            window.Show();
         }
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
@@ -59,7 +61,9 @@ namespace SysTech
 
         private void btnCXS_Click(object sender, RoutedEventArgs e)
         {
-
+            var window = new CXSWindow();
+            this.Close();
+            window.Show();
         }
 
         private void btnMAC_Click(object sender, RoutedEventArgs e)
@@ -69,40 +73,5 @@ namespace SysTech
             window.Show();
         }
 
-        //private void btnCOU_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var window = new COUWindow();
-        //    this.Close();
-        //    window.Show();
-        //}
-
-        //private void btnUser_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var window = new USRWindow();
-        //    this.Close();
-        //    window.Show();
-        //}
-
-        //private void btnCXS_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var window = new CXSWindow();
-        //    this.Close();
-        //    window.Show();
-
-        //}
-
-        //private void btnMAC_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var window = new MACWindow();
-        //    this.Close();
-        //    window.Show();
-        //}
-
-        //private void btnSTU_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var window = new STUWindow();
-        //    this.Close();
-        //    window.Show();
-        //}
     }
 }

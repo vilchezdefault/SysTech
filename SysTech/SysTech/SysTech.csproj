@@ -67,6 +67,12 @@
     <Compile Include="TOOLS\clsChs.cs" />
     <Compile Include="TOOLS\clsGlobalValue.cs" />
     <Compile Include="TOOLS\writeLog.cs" />
+    <Compile Include="WINDOWS\COUWindow.xaml.cs">
+      <DependentUpon>COUWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WINDOWS\CXSWindow.xaml.cs">
+      <DependentUpon>CXSWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WINDOWS\MACWindow.xaml.cs">
       <DependentUpon>MACWindow.xaml</DependentUpon>
     </Compile>
@@ -104,6 +110,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="STYLES\COLORS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WINDOWS\COUWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WINDOWS\CXSWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

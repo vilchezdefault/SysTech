@@ -31,7 +31,7 @@ namespace SysTech.CLASS
             this.cou_updatedate = DateTime.Now;
         }
 
-        public clsCOU(string cou_id, string cou_name, int mac_id, string addby, DateTime adddate)
+        public clsCOU(string cou_id, string cou_name, string addby, DateTime adddate)
         {
             this.cou_id = cou_id;
             this.cou_name = cou_name;
@@ -48,7 +48,7 @@ namespace SysTech.CLASS
         //    this.Cou_dateadd= adddate;
 
         //}    
-        public clsCOU(int k, string cou_id, string cou_name, int mac_id, string cou_status, string updateby, DateTime updatedate)
+        public clsCOU(int k, string cou_id, string cou_name, string cou_status, string updateby, DateTime updatedate)
         {
             k = 0;
             this.cou_id = cou_id;

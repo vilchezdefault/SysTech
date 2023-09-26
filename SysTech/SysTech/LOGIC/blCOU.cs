@@ -8,7 +8,7 @@ using System.Windows;
 using SysTech.CLASS;
 using SysTech.DATABASE;
 
-namespace systemTec.LOGIC
+namespace SysTech.LOGIC
 {
     public class blCOU
     {
@@ -24,34 +24,34 @@ namespace systemTec.LOGIC
         /// <param name="data"></param>
         /// <returns></returns>
 
-        //public bool saveCOU(clsCOU data)
-        //{
-        //    try
-        //    {
-        //        string query = "USE SI_U; EXEC sp_insertCourse '" + data.Cou_id + "','" + data.Cou_name + "','" + data.Cou_addby + "','" + data.Mac_id + "';";
-        //        conn.SQLExecuteCmm(_SQLConnection, query);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //        return false;
-        //    }
+        public bool saveCOU(clsCOU data)
+        {
+            try
+            {
+                string query = "USE U_U; EXEC sp_insertCourse '"+data.CouId+"','"+data.CouName+"','"+data.CouAddBy+"';";
+                conn.SQLExecuteCmm(_SQLConnection, query);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
 
-        //}
-        //public bool updateCOU (clsCOU data)
-        //{
-        //    try
-        //    {
-        //        string query = "USE SI_U; EXEC sp_updateCourse '"+data.Cou_id+"','"+data.Cou_name+"','"+data.Cou_status+"','"+data.Cou_updateby+"',"+data.Mac_id+";";
-        //        conn.SQLExecuteCmm(_SQLConnection, query);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //        return false;
-        //    }
-        //}
+        }
+        public bool updateCOU(clsCOU data)
+        {
+            try
+            {
+                string query = "USE U_U; EXEC sp_updateCourse '"+data.CouId+"','"+data.CouName+"','"+data.CouStatus+"','"+data.CouUpdateBy+"';";
+                conn.SQLExecuteCmm(_SQLConnection, query);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+        }
     }
 }

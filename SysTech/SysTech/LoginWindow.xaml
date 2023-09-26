@@ -132,9 +132,10 @@
                                FontSize="25"
                                FontWeight="Medium"
                                FontFamily="Poppins"
+                               Margin="0,0,0,10"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Username"
+                    <TextBlock Text="Usuario"
                                Foreground="#2c3e50"
                                FontSize="23"
                                Margin="0,0,0,10"
@@ -167,7 +168,7 @@
 
                     </TextBox>
 
-                    <TextBlock Text="Password"
+                    <TextBlock Text="Clave"
                                Foreground="#2c3e50"
                                FontSize="23"
                                FontWeight="Medium"
@@ -200,14 +201,14 @@
 
                     <Button x:Name="btnLogin"
                             
-                            Content="Login"
+                            Content="Ingresar"
                             Foreground="Black"
-                            FontSize="16"
+                            FontSize="20"
                             FontFamily="Poppins"
                             Cursor="Hand"
                             Margin="50"
                             Grid.Column="2"
-                            Click="btnLogin_Click">
+                            Click="btnLogin_Click" Height="32" Width="140">
 
                         <Button.Style>
                             <Style TargetType="Button">

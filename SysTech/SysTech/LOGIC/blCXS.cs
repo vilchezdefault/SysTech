@@ -11,7 +11,7 @@ using System.Windows.Markup;
 using SysTech.CLASS;
 using SysTech.DATABASE;
 
-namespace systemTec.LOGIC
+namespace SysTech.LOGIC
 {
     public class blCXS
     {
@@ -25,7 +25,7 @@ namespace systemTec.LOGIC
         {
             try
             {
-                string query = "USE SI_U; EXEC sp_insertCouXStu '"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_addby+"'";
+                string query = "USE U_U; EXEC sp_insertCouXStu '"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_addby+"';";
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }
@@ -41,7 +41,7 @@ namespace systemTec.LOGIC
 
             try
             {
-                string query = "USE SI_U; EXEC sp_updateCoueseXstudent '" + data.Id + "','" + data.Stu_id + "','" + data.Cou_id + "','" + data.Cxs_score + "','" + data.Cxs_status + "','" + data.Cxs_updateby + "'";
+                string query = "USE U_U; EXEC sp_updateCoueseXstudent '"+data.Id+"','"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_updateby+"';";
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }
