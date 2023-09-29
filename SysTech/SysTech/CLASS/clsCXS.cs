@@ -19,6 +19,10 @@ namespace SysTech.CLASS
         private DateTime cxs_dateadd;
         private string cxs_updateby;
         private DateTime cxs_updatedate;
+        private string cxs_prd;
+
+ 
+
         #endregion
 
         #region Constructors
@@ -34,23 +38,25 @@ namespace SysTech.CLASS
 
         }
 
-        public clsCXS(int stu_id, string cou_id, float cxs_score, string cxs_status, string cxs_addby, DateTime cxs_dateadd)
+        public clsCXS(int stu_id, string cou_id, float cxs_score,string cxs_prd ,string cxs_status, string cxs_addby, DateTime cxs_dateadd)
         {
             this.stu_id = stu_id;
             this.cou_id = cou_id;
             this.cxs_score = cxs_score;
+            this.cxs_prd = cxs_prd;
             this.cxs_status = cxs_status;
             this.cxs_addby = cxs_addby;
             this.cxs_dateadd = cxs_dateadd;
         }
 
-        public clsCXS(int k, int id, int stu_id, string cou_id, float cxs_score, string cxs_status, string cxs_updateby, DateTime cxs_updatedate)
+        public clsCXS(int k, int id, int stu_id, string cou_id, float cxs_score, string cxs_prd, string cxs_status, string cxs_updateby, DateTime cxs_updatedate)
         {
             k = 0;
             this.id = id;
             this.stu_id = stu_id;
             this.cou_id = cou_id;
             this.cxs_score = cxs_score;
+            this.Cxs_prd = cxs_prd;
             this.cxs_status = cxs_status;
             this.cxs_updateby = cxs_updateby;
             this.cxs_updatedate = cxs_updatedate;
@@ -59,6 +65,12 @@ namespace SysTech.CLASS
         #endregion
 
         #region Metetods
+
+        public string Cxs_prd
+        {
+            get { return cxs_prd; }
+            set { cxs_prd = value; }
+        }
         public int Id
         {
             get { return id; }

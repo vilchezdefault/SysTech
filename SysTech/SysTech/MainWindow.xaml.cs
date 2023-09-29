@@ -48,7 +48,7 @@ namespace SysTech
         private void btnCOU_Click(object sender, RoutedEventArgs e)
         {
             var window = new COUWindow();
-            this.Close();
+            //this.Close();
             window.Show();
         }
 
@@ -62,14 +62,14 @@ namespace SysTech
         private void btnCXS_Click(object sender, RoutedEventArgs e)
         {
             var window = new CXSWindow();
-            this.Close();
+           // this.Close();
             window.Show();
         }
 
         private void btnMAC_Click(object sender, RoutedEventArgs e)
         {
             var window = new MACWindow();
-            this.Close();
+            //this.Close();
             window.Show();
         }
 

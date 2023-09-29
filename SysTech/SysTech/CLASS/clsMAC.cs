@@ -17,6 +17,12 @@ namespace SysTech.CLASS
         private DateTime mac_dateadd;
         private string mac_updateby;
         private DateTime mac_updatedate;
+       
+
+
+
+
+
         #endregion
         #region Constructors
         public clsMAC()
@@ -28,6 +34,7 @@ namespace SysTech.CLASS
             this.mac_dateadd = DateTime.Now;
             this.mac_updateby = "";
             this.mac_updatedate = DateTime.Now;
+            this.cou_requis = "";
         }
         /// <summary>
         /// Constructor to save collague
@@ -36,6 +43,7 @@ namespace SysTech.CLASS
         /// <param name="mac_name"></param>
         /// <param name="mac_addby"></param>
         /// <param name="mac_dateadd"></param>
+
         public clsMAC(string mac_id, string mac_name, string mac_addby, DateTime mac_dateadd)
         {
             this.mac_id = mac_id;
@@ -94,6 +102,12 @@ namespace SysTech.CLASS
         {
             get { return mac_updatedate; }
             set { mac_updatedate = value; }
+        }
+        private string cou_requis;
+        public string Cou_requis
+        {
+            get { return cou_requis; }
+            set { cou_requis = value; }
         }
         #endregion
         #endregion

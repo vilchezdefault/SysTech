@@ -48,7 +48,7 @@ namespace SysTech.WINDOWS
         {
             if (txtCOU_ID.Text.Length > 0 && txtCOU_NAME.Text != null)
             {
-                clsCOU COU = new clsCOU(txtCOU_ID.Text, txtCOU_NAME.Text,  clsGlobalValue.userLogin, DateTime.Now);
+                clsCOU COU = new clsCOU(txtCOU_ID.Text, txtCOU_NAME.Text,  clsGlobalValue.userLogin, txtCOU_REQUIS.Text,DateTime.Now);
                 /// clsCOU COU = new clsCOU(txtCOU_NAME.Text, Convert.ToInt32(txtMac_id.Text), clsGlobalValue.userLogin, DateTime.Now);
                 blCOU COUB = new blCOU();
 
@@ -127,6 +127,11 @@ namespace SysTech.WINDOWS
                 conn.Close();
             }
 
+
+        }
+
+        private void dtgCOU_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
 

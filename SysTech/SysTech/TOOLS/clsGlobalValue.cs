@@ -11,6 +11,7 @@ namespace SysTech.TOOLS
     public class clsGlobalValue
     {
         public static String userLogin;
+        public static String STU_ID;
         public static writeLog log;
         public static List<clsCXS> LISTCXS;
 

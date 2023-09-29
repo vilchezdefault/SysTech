@@ -9,6 +9,8 @@
         Height="900"
         Width="900"
         WindowStyle="None"
+        WindowStartupLocation="Manual"
+        ResizeMode="CanResizeWithGrip"
         Background="Transparent"
         AllowsTransparency="True">
 
@@ -32,11 +34,15 @@
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="865*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid>
+                <Grid Grid.ColumnSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="25"/>
@@ -115,11 +121,11 @@
 
                 <StackPanel Grid.Row="1" 
                 VerticalAlignment="Top"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 Orientation="Vertical"
                 Background="AliceBlue"
                 Height="818" 
-                Width="764">
+                Width="764" Grid.Column="1" Margin="42,0,0,0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -224,6 +230,19 @@
                                    HorizontalAlignment="Left"/>
                             <TextBox 
                                      x:Name="txt_STATUS"
+                                     Margin="10"
+                                     FontSize="20"
+                                     Height="30 "
+                                     Width="333"
+                                     HorizontalAlignment="Left"/>   
+                            <Label Content="Periodo:" 
+                                   FontSize="23"
+                                   Foreground="Black"
+                                   Height="35"
+                                   Width="250"
+                                   HorizontalAlignment="Left"/>
+                            <TextBox 
+                                     x:Name="txt_PRD"
                                      Margin="10"
                                      FontSize="20"
                                      Height="30 "

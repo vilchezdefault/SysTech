@@ -49,7 +49,7 @@ namespace SysTech.WINDOWS
         {
             if (txtMAC_ID.Text.Length > 0 && txtMAC_NAME.Text != null)
             {
-                clsMAC MAC = new clsMAC(txtMAC_ID.Text, txtMAC_NAME.Text, clsGlobalValue.userLogin, DateTime.Now);
+                clsMAC MAC = new clsMAC(txtMAC_ID.Text, txtMAC_NAME.Text, clsGlobalValue.userLogin,  DateTime.Now);
                 blMAC MACC = new blMAC();
                 if (MACC.saveMAC(MAC) == true)
                 {

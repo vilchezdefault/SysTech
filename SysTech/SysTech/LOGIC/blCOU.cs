@@ -28,7 +28,7 @@ namespace SysTech.LOGIC
         {
             try
             {
-                string query = "USE U_U; EXEC sp_insertCourse '"+data.CouId+"','"+data.CouName+"','"+data.CouAddBy+"';";
+                string query = "EXEC sp_insertCourse '" + data.CouId + "','" + data.CouName + "','" + data.CouAddBy + "','NULL';";
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }

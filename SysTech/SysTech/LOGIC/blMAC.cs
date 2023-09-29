@@ -26,7 +26,7 @@ namespace SysTech.LOGIC
         {
             try
             {
-                string query = "USE U_U; EXEC sp_insertCollage '" + data.Mac_id+"','"+data.Mac_name+"','"+data.Mac_addby+"';";
+                string query = "USE U_U; EXEC sp_insertCollage '" + data.Mac_id + "','" + data.Mac_name + "','" + data.Mac_addby + "';";
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }

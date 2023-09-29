@@ -22,7 +22,7 @@ namespace SysTech.WINDOWS
 {
     /// <summary>
     /// Interaction logic for CXSWindow.xaml
-    /// </summary>
+    /// </summary>==
     public partial class CXSWindow : Window
     {
 
@@ -49,7 +49,7 @@ namespace SysTech.WINDOWS
         {
             if (txtStuId.Text.Length > 0 && txtCOU_ID.Text.Length > 0 && txt_SCORE.Text.Length > 0 && txt_STATUS.Text != null)
             {
-                clsCXS CXS = new clsCXS(Convert.ToInt32(txtStuId.Text),txtCOU_ID.Text, float.Parse(txt_SCORE.Text), txt_STATUS.Text, clsGlobalValue.userLogin, DateTime.Now);
+                clsCXS CXS = new clsCXS(Convert.ToInt32(txtStuId.Text),txtCOU_ID.Text,float.Parse(txt_SCORE.Text),txt_PRD.Text, txt_STATUS.Text, clsGlobalValue.userLogin, DateTime.Now);
                 blCXS CXSB = new blCXS();
                 if (CXSB.saveCxS(CXS) == true)
                 {
@@ -80,7 +80,7 @@ namespace SysTech.WINDOWS
                 /// clsCXS CXS = new clsCXS(0,Convert.ToInt32(txtID.Text,Convert.ToInt32(txtStuId.Text),Convert.ToInt32(txtCOU_ID.Text),float.Parse(txt_SCORE.Text),txt_STATUS.Text,clsGlobalValue.userLogin,DateTime.Now);
                 /// 
 
-                clsCXS CXS = new clsCXS(0, Convert.ToInt32(txtID.Text), Convert.ToInt32(txtStuId.Text),txtCOU_ID.Text, float.Parse(txt_SCORE.Text), txt_SCORE.Text, clsGlobalValue.userLogin, DateTime.Now);
+                clsCXS CXS = new clsCXS(0, Convert.ToInt32(txtID.Text), Convert.ToInt32(txtStuId.Text),txtCOU_ID.Text, float.Parse(txt_SCORE.Text),txt_PRD.Text ,txt_SCORE.Text, clsGlobalValue.userLogin, DateTime.Now);
                 blCXS CXSB = new blCXS();
                 if (CXSB.updateCxs(CXS) == true)
                 {
@@ -131,7 +131,13 @@ namespace SysTech.WINDOWS
             }
 
         }
-        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new REDSTU();
+            //this.Close();
+            window.Show();
+        }
     }
     
 }

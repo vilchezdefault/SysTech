@@ -25,7 +25,7 @@ namespace SysTech.LOGIC
         {
             try
             {
-                string query = "USE U_U; EXEC sp_insertCouXStu '"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_addby+"';";
+                string query = "USE U_U; EXEC sp_insertCouXStu '"+data.Stu_id+"','"+data.Cou_id+"','" + data.Cxs_prd + "','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_addby+"';";
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }
@@ -41,7 +41,8 @@ namespace SysTech.LOGIC
 
             try
             {
-                string query = "USE U_U; EXEC sp_updateCoueseXstudent '"+data.Id+"','"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_updateby+"';";
+                string query = "USE U_U; EXEC sp_updateCoueseXstudent '"+data.Id+"','"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_prd+"','"+data.Cxs_status+"','"+data.Cxs_updateby+"'";
+;
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }

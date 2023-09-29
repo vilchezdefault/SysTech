@@ -14,6 +14,7 @@ namespace SysTech.CLASS
         private string cou_name;
         private string cou_status;
         private string cou_addby;
+        private string cou_requis;
         private DateTime cou_dateadd;
         private string cou_updateby;
         private DateTime cou_updatedate;
@@ -26,16 +27,18 @@ namespace SysTech.CLASS
             this.cou_name = "";
             this.cou_status = "";
             this.cou_addby = "";
+            this.cou_requis = "";
             this.cou_dateadd = DateTime.Now;
             this.cou_updateby = "";
             this.cou_updatedate = DateTime.Now;
         }
 
-        public clsCOU(string cou_id, string cou_name, string addby, DateTime adddate)
+        public clsCOU(string cou_id, string cou_name, string addby,string cou_requis, DateTime adddate)
         {
             this.cou_id = cou_id;
             this.cou_name = cou_name;
             this.cou_addby = addby;
+            this.cou_requis = cou_requis;
             this.cou_dateadd = adddate;
 
         }
@@ -108,6 +111,12 @@ namespace SysTech.CLASS
         {
             get { return cou_updatedate; }
             set { cou_updatedate = value; }
+        }
+
+        public string Cou_requis
+        {
+            get { return cou_requis; }
+            set { cou_requis = value; }
         }
         #endregion
 

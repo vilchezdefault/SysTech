@@ -161,7 +161,7 @@
                              BorderBrush="Black"
                              IsEnabled="False" />
 
-                        <StackPanel Grid.Row="1" Margin="1,10,-1,-71"
+                        <StackPanel Grid.Row="1" Margin="1,10,-20,-38"
                                     Background="AliceBlue" Grid.RowSpan="5" RenderTransformOrigin="0.5,0.5">
                             <StackPanel.RenderTransform>
                                 <TransformGroup>
@@ -207,6 +207,19 @@
                                    HorizontalAlignment="Left"/>
                             <TextBox 
                                      x:Name="txtCOU_STATUS"
+                                     Margin="10"
+                                     FontSize="18"
+                                     Height="30 "
+                                     Width="333"
+                                     HorizontalAlignment="Left"/>
+                            <Label Content="Requisito:" 
+                                   FontSize="23"
+                                   Foreground="Black"
+                                   Height="42"
+                                   Width="269"
+                                   HorizontalAlignment="Left"/>
+                            <TextBox 
+                                     x:Name="txtCOU_REQUIS"
                                      Margin="10"
                                      FontSize="18"
                                      Height="30 "
@@ -313,7 +326,13 @@
 
                         </StackPanel>
 
-                        <DataGrid Grid.Row="5" x:Name="dtgCOU" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" Margin="61,416,71,0" IsReadOnly="True" Height="141" VerticalAlignment="Top"/>
+                        <DataGrid Grid.Row="5" x:Name="dtgCOU"
+                                  CanUserSortColumns="False" 
+                                  CanUserResizeColumns="False" 
+                                  CanUserReorderColumns="False" 
+                                  Margin="61,491,62,0"
+                                  IsReadOnly="True" Height="77" 
+                                  VerticalAlignment="Top"/>
 
 
 

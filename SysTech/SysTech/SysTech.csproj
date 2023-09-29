@@ -56,9 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CLASS\clsRed.cs" />
     <Compile Include="LOGIC\blCOU.cs" />
     <Compile Include="LOGIC\blCXS.cs" />
     <Compile Include="LOGIC\blMAC.cs" />
+    <Compile Include="LOGIC\blRed.cs" />
     <Compile Include="LOGIC\blSTU.cs" />
     <Compile Include="LOGIC\blUSER.cs" />
     <Compile Include="LoginWindow.xaml.cs">
@@ -75,6 +77,9 @@
     </Compile>
     <Compile Include="WINDOWS\MACWindow.xaml.cs">
       <DependentUpon>MACWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WINDOWS\REDSTU.xaml.cs">
+      <DependentUpon>REDSTU.xaml</DependentUpon>
     </Compile>
     <Compile Include="WINDOWS\STUWindow.xaml.cs">
       <DependentUpon>STUWindow.xaml</DependentUpon>
@@ -124,6 +129,10 @@
     <Page Include="WINDOWS\MACWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WINDOWS\REDSTU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WINDOWS\STUWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
