@@ -30,10 +30,12 @@ namespace SysTech.WINDOWS
         public REDSTU()
         {
             InitializeComponent();
-            //TOOLS.clsGlobalValue.STU_ID = Convert.ToInt32(txtID.Text);
+            txtID.Text = TOOLS.clsGlobalValue.STU_ID;
             txtUserLogg.Text = TOOLS.clsGlobalValue.userLogin;
             txtID.Text = TOOLS.clsGlobalValue.STU_ID;
-       }
+           
+
+        }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
@@ -42,23 +44,6 @@ namespace SysTech.WINDOWS
 
         private void GetInfo_Click(object sender, RoutedEventArgs e)
         {
-
-
-        }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void fillDATA()
-        {
-
             try
             {
                 conn.Open();
@@ -66,22 +51,107 @@ namespace SysTech.WINDOWS
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Parametros del procedimiento almacenado
+                SqlParameter parameter = new SqlParameter("@pIDSTU", SqlDbType.Int);
+
+                parameter.Value = Convert.ToInt32(txtID.Text);
+                cmd.Parameters.Add(parameter);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
                 dtgred.ItemsSource = dt.DefaultView;
 
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+
+                MessageBox.Show(ex.Message);
             }
             finally
             {
                 conn.Close();
             }
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
 
         }
+
+
+        /// <summary>
+        /// Funtion to request info from data base by store procedure and parameter(CLASES.CS NO DESDE BL)
+        /// </summary>
+        /// <param name = "sender" ></ param >
+        /// < param name="e"></param>
+        //private void ConsultarRec(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand("recordXSTU", conn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+        //        //Parametros del procedimiento almacenado
+        //        SqlParameter parameter = new SqlParameter("@pIDSTU", SqlDbType.Int);
+
+        //        parameter.Value = txtID;
+        //        cmd.Parameters.Add(parameter);
+        //        DataTable dt = new DataTable();
+        //        adapter.Fill(dt);
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+        //}
+
+        //private void fillDATA()
+        //{
+
+        //    try
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand("recordXSTU", conn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //        DataTable dt = new DataTable();
+        //        adapter.Fill(dt);
+
+        //        dtgred.ItemsSource = dt.DefaultView;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+
+        //}
+
+
+
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {

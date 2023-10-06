@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:SysTech.WINDOWS"
         mc:Ignorable="d"
         Title="STUWindow" 
-        Height="700"
-        Width="900"
+        Height="900"
+        Width="700"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True">
-    <Border>
+    <Border Margin="0,0,0,-76">
 
         <Border.Background>
             <ImageBrush ImageSource="/SOURCE/books2.jpg"
@@ -22,7 +22,7 @@
         </Border.Background>
         <Border CornerRadius="15"
             BorderThickness="5"
-                Opacity="0.8" Margin="0,0,10,-424">
+                Opacity="0.95" Height="956" VerticalAlignment="Center">
 
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
@@ -37,10 +37,12 @@
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource blueOcean}" Offset="0"/>
                     <GradientStop Color="{StaticResource Gray}" Offset="0.75"/>
+                    <GradientStop Color="{StaticResource blanco}" Offset="0.0"/>
+
                 </LinearGradientBrush>
             </Border.Background>
 
-            <Grid>
+            <Grid Height="983" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition />
@@ -130,20 +132,13 @@
 
                 </Grid>
 
-                <StackPanel Grid.Row="1" 
-                            VerticalAlignment="Top"
+                <StackPanel
                             HorizontalAlignment="Center"
-                            Orientation="Horizontal"
-                            Background="#F4F4F4"
-                            Height="704" 
-                            Width="582">
-                    <StackPanel.Resources>
-                        <!-- Tus estilos -->
-                    </StackPanel.Resources>
+                            Orientation="Vertical"
+                            Background="#F4F4F4" 
+                            Width="550" Margin="0,31,0,98" Grid.Row="1">
 
-                    <StackPanel Margin="10,10,10,10" 
-                                Width="565">
-                        <TextBlock x:Name="currentUser"
+                    <TextBlock x:Name="currentUser"
                                Text="Usuario"
                                HorizontalAlignment="Left"
                                Height="21"
@@ -151,7 +146,7 @@
                                VerticalAlignment="Top"
                                Width="70"/>
 
-                        <TextBox x:Name="txtUserLogg"
+                    <TextBox x:Name="txtUserLogg"
                              HorizontalAlignment="Left"
                              Height="25" 
                              Margin="0,0,0,0"
@@ -164,7 +159,7 @@
                              IsEnabled="False" />
 
 
-                        <!--<Label x:Name="lblModo"
+                    <!--<Label x:Name="lblModo"
                                Content="Modo:"
                                HorizontalAlignment="Left"
                                Margin="0,0,0,0"
@@ -183,26 +178,26 @@
                                  FontSize="16"/>-->
 
 
-                        <Label Content="Cedula del estudiante:"
+                    <Label Content="Cedula del estudiante:"
                                FontSize="23"
                                Foreground="Black"
                                Height="35"
                                Width="250"
                                HorizontalAlignment="Left" />
-                        <TextBox x:Name="txtStuId"
+                    <TextBox x:Name="txtStuId"
                                  FontSize="18"
                                  Height="35"
                                  Width="333"
                                  HorizontalAlignment="Left"  />
 
-                        <Label Content="Código de la carrera:"
+                    <Label Content="Código de la carrera:"
                                FontSize="23"
                                Foreground="Black"
-                               Height="35"
-                               Width="235"
+                               Height="42"
+                               Width="251"
                                HorizontalAlignment="Left"
                                />
-                        <TextBox x:Name="txtMacId"
+                    <TextBox x:Name="txtMacId"
                                  FontSize="18"
                                  Foreground="Black"
                                  Height="35"
@@ -210,32 +205,32 @@
                                  HorizontalAlignment="Left"/>
 
 
-                        <Label Content="Nombre:"
+                    <Label Content="Nombre:"
                                FontSize="23"
                                Foreground="Black"/>
-                        <TextBox x:Name="txtStuName"
+                    <TextBox x:Name="txtStuName"
                                  Height="35"
                                  Width="333"
                                  HorizontalAlignment="Left"
-                                 FontSize="18"/>             
-                        <Label Content="Apellidos:"
+                                 FontSize="18"/>
+                    <Label Content="Apellidos:"
                                FontSize="23"
                                Foreground="Black"/>
-                        <TextBox x:Name="txtStuLastName"
+                    <TextBox x:Name="txtStuLastName"
                                  Height="35"
                                  Width="333"
                                  HorizontalAlignment="Left"
-                                 FontSize="18"/>          
-                        <Label Content="Estado:"
+                                 FontSize="18"/>
+                    <Label Content="Estado:"
                                FontSize="23"
                                Foreground="Black"/>
-                        <TextBox x:Name="txtStuStatus"
+                    <TextBox x:Name="txtStuStatus"
                                  Height="35"
                                  Width="333"
                                  HorizontalAlignment="Left"
                                  FontSize="18"/>
 
-                        <Button x:Name="btnSave"                           
+                    <Button x:Name="btnSave"                           
                             Content="Guardar"
                             Foreground="Black"
                             FontSize="20"
@@ -244,29 +239,29 @@
                             Width="182"
                             HorizontalAlignment="Right"
                             Margin="0,25,035,10">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#bdc3c7"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="true">
-                                            <Setter Property="Background" Value="#2c3e50"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#bdc3c7"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="#2c3e50"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="150" Height="25"
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
+                                    <ContentPresenter VerticalAlignment="Center"
                                                           HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
-                        <Button x:Name="btnUpdate"                           
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnUpdate"                           
                             Content="Modificar"
                             Foreground="Black"
                             FontSize="20"
@@ -275,30 +270,30 @@
                             Width="182"
                             HorizontalAlignment="Right"
                             Margin="0,0,34,05">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#bdc3c7"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="true">
-                                            <Setter Property="Background" Value="#2c3e50"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#bdc3c7"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="#2c3e50"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="150" Height="25"
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
+                                    <ContentPresenter VerticalAlignment="Center"
                                                           HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
-                        <Button Content="Consultar"
+                    <Button Content="Consultar"
                                 x:Name="btnLookInfo"
                                 Foreground="Black"
                                 FontSize="20"
@@ -306,31 +301,31 @@
                                 Click="btnLookInfo_Click"
                                 Width="225">
 
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#bdc3c7"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="true">
-                                            <Setter Property="Background" Value="#2c3e50"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#bdc3c7"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="#2c3e50"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="150" Height="25"
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
+                                    <ContentPresenter VerticalAlignment="Center"
                                                           HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
 
-                        </Button>
+                    </Button>
 
-                        <TextBlock Grid.Column="1" 
+                    <TextBlock Grid.Column="1" 
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Top"
                                    FontSize="15"
@@ -338,12 +333,27 @@
                                    Margin="0,10,0,0"
                                    Text="El estado es necesario solamente para actulizar"/>
 
+                    <DataGrid  Grid.Row="4" 
+                               x:Name="dtgSTU"                                 
+                               FontSize="15"
+                               IsReadOnly="True"
+                               CanUserSortColumns="False" 
+                               CanUserResizeColumns="False" 
+                               CanUserReorderColumns="False"
+                               Margin="0,0,0,0" 
+                               Height="267"/>
 
-                    </StackPanel>
+
+
+                    <StackPanel.Resources>
+                        <!-- Tus estilos -->
+                    </StackPanel.Resources>
+
+
+
 
                 </StackPanel>
 
-                <DataGrid  Grid.Row="1" x:Name="dtgSTU" IsReadOnly="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" Margin="198,573,196,403"/>
 
             </Grid>
 

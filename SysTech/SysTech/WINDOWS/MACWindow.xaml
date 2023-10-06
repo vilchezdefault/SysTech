@@ -10,13 +10,13 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        Height="658"
+        Height="824"
         Width="900">
     <Border Margin="0,0,0,10">
         <Border.Background>
             <ImageBrush ImageSource="/SOURCE/books2.jpg" Stretch="None"/>
         </Border.Background>
-        <Border CornerRadius="15" BorderThickness="5" Opacity="0.8" Margin="10,0,0,0">
+        <Border CornerRadius="15" BorderThickness="5" Opacity="0.9" Margin="10,0,0,0">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource primaryBlueColor}" Offset="0"/>
@@ -28,6 +28,7 @@
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource blueOcean}" Offset="0"/>
                     <GradientStop Color="{StaticResource Gray}" Offset="0.75"/>
+                    <GradientStop Color="{StaticResource blanco}" Offset="0.0"/>
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -110,14 +111,12 @@
                 </Grid>
 
 
-                <StackPanel Grid.Row="1" 
-                VerticalAlignment="Top"
+                <StackPanel Grid.Row="1"
                 HorizontalAlignment="Center"
                 Orientation="Vertical"
-                Background="#F4F4F4"
-                Height="551" 
+                Background="#F4F4F4" 
                 Width="574"
-                Margin="0,20,0,0">
+                Margin="0,20,0,34">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -201,9 +200,9 @@
                                      FontSize="20"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>    
+                                     HorizontalAlignment="Left"/>
 
-                            
+
                             <Button x:Name="btnSave"
                                     Click="btnSave_Click"
                                     Content="Guardar"
@@ -274,10 +273,7 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-
                             <Button x:Name="GetInfo"
-                                    HorizontalAlignment="Center"
-                                    Margin="0,0,0,0"
                                     Content="Consultar"
                                     Width="194"
                                     Height="40" Click="GetInfo_Click"
@@ -296,7 +292,7 @@
                                 </Button.Style>
 
                                 <Button.Template>
-                                    <ControlTemplate TargetType="Button">
+                                    <ControlTemplate TargetType="{x:Type Button}">
                                         <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
@@ -305,17 +301,9 @@
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
-
-
-
                             </Button>
-
-
                         </StackPanel>
-
-                        <DataGrid Grid.Row="2" x:Name="dtgMAC" Height="209" IsReadOnly="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False"/>
-
-
+                        <DataGrid Grid.Row="2" x:Name="dtgMAC" IsReadOnly="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" Margin="0,0,0,-294" Grid.RowSpan="4"/>
                     </Grid>
                 </StackPanel>
 

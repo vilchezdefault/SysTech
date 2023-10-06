@@ -7,19 +7,20 @@
         mc:Ignorable="d"
         Title="CXSWindow" 
         Height="900"
-        Width="900"
+        Width="876"
         WindowStyle="None"
-        WindowStartupLocation="Manual"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip"
         Background="Transparent"
         AllowsTransparency="True">
 
-    <Border >
+
+    <Border Margin="-10,0,10,-30" >
 
         <Border.Background>
             <ImageBrush ImageSource="/SOURCE/books2.jpg" Stretch="None"/>
         </Border.Background>
-        <Border CornerRadius="15" BorderThickness="5" Opacity="0.8" Margin="10,0,0,0">
+        <Border CornerRadius="15" BorderThickness="5" Opacity="0.95" Margin="10,0,0,0" Height="922" VerticalAlignment="Top">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource primaryBlueColor}" Offset="0"/>
@@ -31,9 +32,10 @@
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource blueOcean}" Offset="0"/>
                     <GradientStop Color="{StaticResource Gray}" Offset="0.75"/>
+                    <GradientStop Color="{StaticResource blanco}" Offset="0.0"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Grid>
+            <Grid Margin="0,0,0,117">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="16*"/>
                     <ColumnDefinition Width="865*"/>
@@ -119,13 +121,11 @@
                 </Grid>
 
 
-                <StackPanel Grid.Row="1" 
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
+                <StackPanel Grid.Row="1"
+                HorizontalAlignment="Center"
                 Orientation="Vertical"
-                Background="AliceBlue"
-                Height="818" 
-                Width="764" Grid.Column="1" Margin="42,0,0,0">
+                Background="Transparent" 
+                Width="778" Margin="0,0,0,-123" Grid.Column="1">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -145,10 +145,10 @@
 
                         <TextBlock x:Name="currentUser"
                                Text="Usuario"
-                               HorizontalAlignment="Right"
+                               HorizontalAlignment="Left"
                                Height="27"
-                               Margin="0,1,225,0"
-                               VerticalAlignment="Top"
+                               Margin="468,0,0,0"
+                               VerticalAlignment="Center"
                                Width="117" 
                                RenderTransformOrigin="1.686,0.476"
                                FontSize="20"/>
@@ -166,201 +166,218 @@
                              IsEnabled="False"
                              FontSize="20"/>
 
-                        <StackPanel Grid.Row="1" Margin="0,10">
-
-                            <Label Content="Numero de boleta:" 
+                        <Label Content="Numero de boleta:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="35"
                                    Width="250"
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left" Margin="10,10,0,-44" Grid.Row="5"/>
 
-                            <TextBox HorizontalAlignment="Left"
+                        <TextBox HorizontalAlignment="Left"
                                      x:Name="txtID"
                                      FontSize="20"
                                      Height="30 "
                                      Width="333"
-                                     Margin="10,0,0,1"/>
+                                     Margin="8,54,0,-83" Grid.Row="5"/>
 
-                            <Label Content="Cedula del estudiante:"                                   
+                        <Label Content="Cedula del estudiante:"                                   
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="35"
                                    Width="250"
-                                   HorizontalAlignment="Left" />
+                                   HorizontalAlignment="Left" Margin="8,89,0,-123" Grid.Row="5" />
 
-                            <TextBox Grid.Column="1"
-                                     Margin="10" 
+                        <TextBox
+                                     Margin="8,135,0,-164" 
                                      Name="txtStuId"
                                      FontSize="18"
                                      Height="30"
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Label Content="Código del curso:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Código del curso:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="41"
                                    Width="332"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="8,170,0,-210" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txtCOU_ID"
-                                     Margin="10"
+                                     Margin="10,222,0,-251"
                                      FontSize="18"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Label Content="Nota:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Nota:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="35"
                                    Width="250"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="8,257,0,-291" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txt_SCORE"
-                                     Margin="10"
+                                     Margin="7,312,0,-341"
                                      FontSize="20"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Label Content="Estado:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Estado:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="35"
                                    Width="250"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="10,347,0,-381" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txt_STATUS"
-                                     Margin="10"
+                                     Margin="10,398,0,-427"
                                      FontSize="20"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>   
-                            <Label Content="Periodo:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Periodo:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="35"
                                    Width="250"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="10,433,0,-467" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txt_PRD"
-                                     Margin="10"
+                                     Margin="10,482,0,-511"
                                      FontSize="20"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
 
 
 
-                            <Button x:Name="btnSave"
+                        <Button x:Name="btnSave"
                                     HorizontalAlignment="Right"
                                     FontSize="20"
                                     Content="Guardar"
-                                    Width="160"
-                                    Height="40" Click="btnSave_Click"
-                                    Margin="0,0,60,0">
+                                    Width="160" Click="btnSave_Click"
+                                    Margin="0,394,263,-445" Grid.Row="5">
 
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#bdc3c7"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter Property="Background" Value="#2c3e50"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="25"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="35"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
 
 
-                            <Button x:Name="btnUpdate"
+                        <Button x:Name="btnUpdate"
                                     HorizontalAlignment="Right"
-                                    Margin="0,0,60,0"
+                                    Margin="0,439,256,-496"
                                     FontSize="20"
                                     Content="Modificar"
-                                    Width="160"
-                                    Height="42" Click="btnUpdate_Click">
+                                    Width="176" Click="btnUpdate_Click" Grid.Row="5">
 
 
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#bdc3c7"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter Property="Background" Value="#2c3e50"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="25"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="35"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
 
 
 
 
-                            </Button>
-
-                            <Button x:Name="GetInfo"
-                                    HorizontalAlignment="Center"
-                                    Margin="0,0,0,0"
+                        </Button>
+                        <Button x:Name="GetInfo"
                                     Content="Consultar"
                                     Width="174"
                                     Height="36" 
                                     Click="GetInfo_Click"
-                                    FontSize="20">
+                                    FontSize="20" Margin="348,497,256,-532" Grid.Row="5">
 
 
 
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#bdc3c7"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter Property="Background" Value="#2c3e50"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="25"
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Width="150" Height="35"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
+                        <DataGrid x:Name="dtgCXS" FontSize="15" IsReadOnly="True" Height="236" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" Margin="0,548,57,-783" Grid.Row="5"/>
+                        <Button x:Name="btnRED"
+                            HorizontalAlignment="Right"
+                            FontSize="20"
+                            Content="Record por cédula"
+                            Width="219" Click="btnRED_Click"
+                            Margin="0,482,37,-528" Grid.Row="5">
 
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-
-                            </Button>
-
-                        </StackPanel>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Width="200" Height="35"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                     </Grid>
-                    <DataGrid x:Name="dtgCXS" IsReadOnly="True" Height="209" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False"/>
                 </StackPanel>
             </Grid>
         </Border>

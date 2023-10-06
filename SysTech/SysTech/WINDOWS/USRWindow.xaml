@@ -179,7 +179,7 @@
                                />
 
                     <TextBox x:Name="txtUsername"
-                             FontSize="13"
+                             FontSize="15"
                              FontWeight="Medium"
                              FontFamily="Poppins"                         
                              Foreground="Black"
@@ -213,7 +213,7 @@
                     <Button x:Name="btnSave"                           
                             Content="Save"
                             Foreground="black"
-                            FontSize="20"
+                            FontSize="15"
                             FontFamily="Poppins"
                             Cursor="Hand"
                             Margin="50"

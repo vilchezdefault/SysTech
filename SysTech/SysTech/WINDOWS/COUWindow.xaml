@@ -6,20 +6,22 @@
         xmlns:local="clr-namespace:SysTech.WINDOWS"
         mc:Ignorable="d"
         Title="COUWindow" 
-        Height="700" 
-        Width="900"
+        Height="900" 
+        Width="960"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip"
         Background="Transparent"
         AllowsTransparency="True">
-    <Border Margin="0,0,0,10">
+    <Border Height="900"  VerticalAlignment="Bottom">
         <Border.Background>
             <ImageBrush ImageSource="/SOURCE/books2.jpg" Stretch="None"/>
         </Border.Background>
-        <Border CornerRadius="15" BorderThickness="5" Opacity="0.8" Margin="10,0,0,0" Height="690" VerticalAlignment="Center">
+        <Border CornerRadius="15" BorderThickness="3" Opacity="0.95" RenderTransformOrigin="0.505,0.605">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource primaryBlueColor}" Offset="0"/>
+
                     <GradientStop Color="{StaticResource blueOcean}" Offset="0.25"/>
                     <GradientStop Color="{StaticResource Gray}" Offset="0.5"/>
                 </LinearGradientBrush>
@@ -28,7 +30,7 @@
                 <LinearGradientBrush StartPoint="0.0,0.0" EndPoint="1.0,1.0">
                     <GradientStop Color="{StaticResource blueOcean}" Offset="0"/>
                     <GradientStop Color="{StaticResource Gray}" Offset="0.75"/>
-                    <GradientStop Color="{StaticResource blanco}" Offset="0.45"/>
+                    <GradientStop Color="{StaticResource blanco}" Offset="0."/>
                 </LinearGradientBrush>
             </Border.Background>
             <Grid Margin="0,0,5,-5">
@@ -38,7 +40,8 @@
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="237*"/>
+                        <ColumnDefinition Width="203*"/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="5"/>
@@ -49,14 +52,14 @@
                                FontFamily="Poppins"
                                Grid.Column="0"
                                VerticalAlignment="Center"
-                               Margin="10,0,0,0"/>
+                               Margin="10,0,0,0" Grid.ColumnSpan="2"/>
                     <Button x:Name="btnMinimize"
                             Content="-"
                             Foreground="Black"
                             FontSize="16"
                             FontFamily="Poppins"
                             Cursor="Hand"
-                            Grid.Column="1"
+                            Grid.Column="2"
                             Click="btnMinimize_Click_1">
                         <Button.Style>
                             <Style TargetType="Button">
@@ -84,11 +87,11 @@
                             FontSize="16"
                             FontFamily="Poppins"
                             Cursor="Hand"
-                            Grid.Column="2"
+                            Grid.Column="3"
                             Click="btnClose_Click"
                             Height="30"
                             VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
+                            HorizontalAlignment="Center"
                             Width="25">
                         <Button.Style>
                             <Style TargetType="Button">
@@ -119,9 +122,8 @@
                 Orientation="Vertical"
                
                 Opacity="50"
-                Height="601" 
-                Width="592"
-                Margin="0,20,0,0">
+                Height="600" 
+                Width="592" Margin="0,92,0,0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -161,208 +163,172 @@
                              BorderBrush="Black"
                              IsEnabled="False" />
 
-                        <StackPanel Grid.Row="1" Margin="1,10,-20,-38"
-                                    Background="AliceBlue" Grid.RowSpan="5" RenderTransformOrigin="0.5,0.5">
-                            <StackPanel.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform AngleX="-1.019"/>
-                                    <RotateTransform/>
-                                    <TranslateTransform X="-6.982"/>
-                                </TransformGroup>
-                            </StackPanel.RenderTransform>
-
-                            <Label Content="Código del curso:"                                   
+                        <Label Content="Código del curso:"                                   
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="45"
                                    Width="193"
-                                   HorizontalAlignment="Left" />
+                                   HorizontalAlignment="Left" Margin="0,0,0,649" Grid.Row="5" />
 
-                            <TextBox Grid.Column="1"
-                                     Margin="10" 
+                        <TextBox
+                                     Margin="10,45,0,619" 
                                      Name="txtCOU_ID"
                                      FontSize="18"
                                      Height="30"
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Label Content="Nombre del curso:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Nombre del curso:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="42"
                                    Width="269"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="0,89,0,563" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txtCOU_NAME"
-                                     Margin="10"
+                                     Margin="10,136,0,528"
                                      FontSize="18"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Label Content="Estado:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Estado:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="42"
                                    Width="269"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="0,182,0,470" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txtCOU_STATUS"
-                                     Margin="10"
+                                     Margin="10,224,0,440"
                                      FontSize="18"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Label Content="Requisito:" 
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Label Content="Requisito:" 
                                    FontSize="23"
                                    Foreground="Black"
                                    Height="42"
                                    Width="269"
-                                   HorizontalAlignment="Left"/>
-                            <TextBox 
+                                   HorizontalAlignment="Left" Margin="0,266,0,386" Grid.Row="5"/>
+                        <TextBox 
                                      x:Name="txtCOU_REQUIS"
-                                     Margin="10"
+                                     Margin="10,313,0,351"
                                      FontSize="18"
                                      Height="30 "
                                      Width="333"
-                                     HorizontalAlignment="Left"/>
-                            <Button x:Name="GetInfo"
-                                    HorizontalAlignment="Center"
-                                    Margin="0,0,0,0"
+                                     HorizontalAlignment="Left" Grid.Row="5"/>
+                        <Button x:Name="GetInfo"
+                                    HorizontalAlignment="Left"
+                                    Margin="376,239,0,419"
                                     FontSize="20"
                                     Content="Consultar"
                                     Width="173"
-                                    Height="36" Click="GetInfo_Click">
-                                <Button.Style>
-                                    <Style TargetType="{x:Type Button}">
-                                        <Setter Property="Background" Value="#bdc3c7"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter Property="Background" Value="#2c3e50"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                                    Height="36" Click="GetInfo_Click" Grid.Row="5">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="#bdc3c7"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="25"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                           HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
 
 
-                            </Button>
+                        </Button>
 
-                            <Button Name="btnSave"
+                        <Button Name="btnSave"
                                     HorizontalAlignment="Right"
-                                    Margin="0,0,49,0"
+                                    Margin="0,124,55,534"
                                     FontSize="20"
                                     Content="Guardar"
                                     Width="157"
-                                    Height="36" Click="btnSave_Click">
+                                    Height="36" Click="btnSave_Click" Grid.Row="5">
 
-                                <Button.Style>
-                                    <Style TargetType="{x:Type Button}">
-                                        <Setter Property="Background" Value="#bdc3c7"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter Property="Background" Value="#2c3e50"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="#bdc3c7"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="25"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                           HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
 
 
 
 
-                            </Button>
+                        </Button>
 
-                            <Button x:Name="btnUpdate"                           
+                        <Button x:Name="btnUpdate"                           
                             Content="Modificar"
                             Foreground="Black"
                             FontSize="20"
                             FontFamily="Poppins"
                             Click="btnUpdate_Click" 
-                            Width="182"
+                            Width="165"
                             HorizontalAlignment="Right"
-                            Margin="0,10,34,05">
-                                <Button.Style>
-                                    <Style TargetType="{x:Type Button}">
-                                        <Setter Property="Background" Value="#bdc3c7"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter Property="Background" Value="#2c3e50"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                            Margin="0,172,47,460" Grid.Row="5">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="#bdc3c7"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#2c3e50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="25"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="25"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                           HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
-                        </StackPanel>
+
 
                         <DataGrid Grid.Row="5" x:Name="dtgCOU"
                                   CanUserSortColumns="False" 
                                   CanUserResizeColumns="False" 
                                   CanUserReorderColumns="False" 
-                                  Margin="61,491,62,0"
-                                  IsReadOnly="True" Height="77" 
-                                  VerticalAlignment="Top"/>
-
-
-
-
-
+                                  Margin="0,394,0,0"
+                                  IsReadOnly="True" 
+                                  RenderTransformOrigin="0.50,0"
+                                  FontSize="15" Height="180" VerticalAlignment="Top"/>
                     </Grid>
                 </StackPanel>
 
-                <!--<StackPanel Grid.Row="1" 
-                            VerticalAlignment="Top"
-                            HorizontalAlignment="Center"
-                            Orientation="Horizontal"
-                            Background="#F4F4F4"
-                            Height="650" 
-                            Width="582">
-                    
-                    <TextBlock Text="MAC_ID:" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Margin="10" Name="txtMAC_ID"/>
 
-                    <TextBlock Text="MAC_NAME:" Grid.Row="1" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Margin="10" Name="txtMAC_NAME"/>
-
-                    <TextBlock Text="MAC_STATUS:" Grid.Row="2" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Margin="10" Name="txtMAC_STATUS"/>
-
-                    <Button Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Insert"
-                Width="100" Height="30" Click="InsertButton_Click"/>
-
-
-                </StackPanel>-->
             </Grid>
 
 

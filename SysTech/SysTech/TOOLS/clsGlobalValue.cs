@@ -12,6 +12,7 @@ namespace SysTech.TOOLS
     {
         public static String userLogin;
         public static String STU_ID;
+
         public static writeLog log;
         public static List<clsCXS> LISTCXS;
 
