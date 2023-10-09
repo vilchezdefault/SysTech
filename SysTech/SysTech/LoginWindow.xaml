@@ -208,7 +208,7 @@
                             Cursor="Hand"
                             Margin="50"
                             Grid.Column="2"
-                            Click="btnLogin_Click" Height="32" Width="168">
+                            Click="btnLogin_Click" Height="32" Width="156">
 
                         <Button.Style>
                             <Style TargetType="Button">

@@ -353,7 +353,7 @@
                             FontSize="20"
                             Content="Record por cédula"
                             Width="219" Click="btnRED_Click"
-                            Margin="0,482,37,-528" Grid.Row="5">
+                            Margin="0,491,49,-537" Grid.Row="5">
 
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
