@@ -166,6 +166,9 @@
                              IsEnabled="False"
                              FontSize="20"/>
 
+
+
+
                         <Label Content="Numero de boleta:" 
                                    FontSize="23"
                                    Foreground="Black"
@@ -279,6 +282,10 @@
                             </Button.Template>
                         </Button>
 
+                        <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" 
+                                   x:Name="TXTerrorTextBlock"
+                                   Foreground="Red" />
 
 
                         <Button x:Name="btnUpdate"
@@ -377,6 +384,9 @@
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
+
+
+
                     </Grid>
                 </StackPanel>
             </Grid>

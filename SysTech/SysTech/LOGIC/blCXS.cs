@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,11 +23,18 @@ namespace SysTech.LOGIC
         SqlConnection cn = new SqlConnection();
         SqlCommand com = new SqlCommand();
 
+
+
+        /*
+         * 
+         * */
+
+
         public bool saveCxS(clsCXS data)
         {
             try
             {
-                string query = "USE U_U; EXEC sp_insertCouXStu '"+data.Stu_id+"','"+data.Cou_id+"','" + data.Cxs_prd + "','"+data.Cxs_score+"','"+data.Cxs_status+"','"+data.Cxs_addby+"';";
+                string query = "USE U_U; EXEC sp_insertCouXStu '" + data.Stu_id + "','" + data.Cou_id + "','" + data.Cxs_prd + "','" + data.Cxs_score + "','" + data.Cxs_status + "','" + data.Cxs_addby + "';";
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }
@@ -35,14 +44,15 @@ namespace SysTech.LOGIC
                 return false;
             }
         }
+
 
         public bool updateCxs(clsCXS data)
         {
 
             try
             {
-                string query = "USE U_U; EXEC sp_updateCoueseXstudent '"+data.Id+"','"+data.Stu_id+"','"+data.Cou_id+"','"+data.Cxs_score+"','"+data.Cxs_prd+"','"+data.Cxs_status+"','"+data.Cxs_updateby+"'";
-;
+                string query = "USE U_U; EXEC sp_updateCoueseXstudent '" + data.Id + "','" + data.Stu_id + "','" + data.Cou_id + "','" + data.Cxs_score + "','" + data.Cxs_prd + "','" + data.Cxs_status + "','" + data.Cxs_updateby + "'";
+                ;
                 conn.SQLExecuteCmm(_SQLConnection, query);
                 return true;
             }
@@ -54,7 +64,6 @@ namespace SysTech.LOGIC
 
         }
 
-        
 
 
     }

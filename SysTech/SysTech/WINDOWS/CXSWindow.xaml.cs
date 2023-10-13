@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,14 @@ namespace SysTech.WINDOWS
             fillDATA();
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+
+public void ShowMessage(string message)
+    {
+        MessageBox.Show(message, "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+
+
+    private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -46,30 +54,166 @@ namespace SysTech.WINDOWS
             WindowState = WindowState.Minimized;
         }
 
+
+
+        //using System;
+        //using System.Data.SqlClient;
+        //using System.Windows;
+
+        //namespace WpfApp
+        //    {
+        //        public partial class MainWindow : Window
+        //        {
+        //            public MainWindow()
+        //            {
+        //                InitializeComponent();
+        //            }
+
+        //            private void Button_Click(object sender, RoutedEventArgs e)
+        //            {
+        //                try
+        //                {
+        //                    // Conectarse a la base de datos
+        //                    using (SqlConnection connection = new SqlConnection("TuCadenaDeConexion"))
+        //                    {
+        //                        connection.Open();
+
+        //                        // Llamar al procedimiento almacenado
+        //                        using (SqlCommand command = new SqlCommand("sp_MiProcedimiento", connection))
+        //                        {
+        //                            // Establecer el tipo de comando como procedimiento almacenado
+        //                            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+        //                            // Agregar parámetros si es necesario
+        //                            // command.Parameters.AddWithValue("@Parametro1", valor1);
+        //                            // command.Parameters.AddWithValue("@Parametro2", valor2);
+
+        //                            // Ejecutar el procedimiento almacenado
+        //                            command.ExecuteNonQuery();
+        //                        }
+
+        //                        // Realizar otras operaciones si es necesario
+        //                    }
+        //                }
+        //                catch (SqlException ex)
+        //                {
+        //                    // Manejar la excepción de SQL
+        //                    MessageBox.Show("Error de SQL: " + ex.Message);
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    // Manejar otras excepciones generales
+        //                    MessageBox.Show("Error general: " + ex.Message);
+        //                }
+        //            }
+        //        }
+        //    }
+
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (txtStuId.Text.Length > 0 && txtCOU_ID.Text.Length > 0 && txt_SCORE.Text.Length > 0 && txt_STATUS.Text != null)
+
+            try
+
+
             {
-                clsCXS CXS = new clsCXS(Convert.ToInt32(txtStuId.Text),txtCOU_ID.Text,float.Parse(txt_SCORE.Text),txt_PRD.Text, txt_STATUS.Text, clsGlobalValue.userLogin, DateTime.Now);
-                blCXS CXSB = new blCXS();
-                if (CXSB.saveCxS(CXS) == true)
+                using (SqlConnection connection = new SqlConnection("Data Source=MARIADELMAR\\UMCA; Initial Catalog=U_U; Integrated Security=false;Connect Timeout=30;Application Name=Gemas;User ID=sa;Password=umca2022*;"))
                 {
-                    MessageBox.Show("[Éxito al guardar!");
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("sp_insertCouXStu", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar los parámetros necesarios
+                        clsCXS data = new clsCXS(Convert.ToInt32(txtStuId.Text), txtCOU_ID.Text, float.Parse(txt_SCORE.Text), txt_PRD.Text, txt_STATUS.Text, clsGlobalValue.userLogin, DateTime.Now);
+
+                        command.Parameters.AddWithValue("@p_STUID", data.Stu_id);
+                        command.Parameters.AddWithValue("@p_COUID", data.Cou_id);
+                        command.Parameters.AddWithValue("@p_CXSSCORE", data.Cxs_score);
+                        command.Parameters.AddWithValue("@p_CXSPRD", data.Cxs_prd);
+                        command.Parameters.AddWithValue("@pXS_STATUS", data.Cxs_status);
+                        command.Parameters.AddWithValue("@pAddby", data.Cxs_addby);
+
+                        SqlParameter errorMessageParameter = new SqlParameter("@pErrorMessage", SqlDbType.NVarChar, -1);
+                        errorMessageParameter.Direction = ParameterDirection.Output; // Esto es esencial
+                        command.Parameters.Add(errorMessageParameter);
+
+                        command.ExecuteNonQuery();
+
+                  
+
+                        string errorMessage = command.Parameters["@pErrorMessage"].Value.ToString();
+
+                        if (!string.IsNullOrEmpty(errorMessage))
+                        {
+                            MessageBox.Show("Error del procedimiento almacenado: " + errorMessage);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Procedimiento almacenado ejecutado con éxito.");
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Algo está mal!");
-                }
-                txtStuId.Text = "";
-                txtCOU_ID.Text = "";
-                txt_SCORE.Text = "";
-                txt_STATUS.Text = "";
             }
-            else
+            catch (SqlException ex)
             {
-                MessageBox.Show("Debe llenar completar los espacios");
+                MessageBox.Show("Error de SQL: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error general: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
+
+
+
+
+        
+
+
+
+
+        //MANERA 2
+
+
+        //try
+        //{
+        //    if (txtStuId.Text.Length > 0 && txtCOU_ID.Text.Length > 0 && txt_SCORE.Text.Length > 0 && txt_STATUS.Text != null)
+        //    {
+        //        clsCXS CXS = new clsCXS(Convert.ToInt32(txtStuId.Text), txtCOU_ID.Text, float.Parse(txt_SCORE.Text), txt_PRD.Text, txt_STATUS.Text, clsGlobalValue.userLogin, DateTime.Now);
+        //        blCXS CXSB = new blCXS();
+        //        if (CXSB.saveCxS(CXS) == true)
+        //        {
+        //            MessageBox.Show("[Éxito al guardar!");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Algo está mal!");
+        //        }
+        //        txtStuId.Text = "";
+        //        txtCOU_ID.Text = "";
+        //        txt_SCORE.Text = "";
+        //        txt_STATUS.Text = "";
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Debe llenar completar los espacios");
+        //    }
+        //}
+        //catch (SqlException ex)
+        //{
+
+        //    TXTerrorTextBlock.Text = "Error general: " + ex.Message;
+        //    throw new ApplicationException("Ha ocurrido un error general.", ex);
+        //}
+
+
+
+
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {

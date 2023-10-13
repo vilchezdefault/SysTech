@@ -106,6 +106,7 @@ namespace SysTech.WINDOWS
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("sp_GetCoursesWithoutRequisites", conn);
+                //SqlCommand cmd = new SqlCommand("sp_GetCoursesWithRequisites", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

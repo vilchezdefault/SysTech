@@ -28,17 +28,19 @@ namespace SysTech.CLASS
         #region Constructors
         public clsCXS()
         {
+
             this.cou_id = "";
             this.stu_id = 0;
             this.cxs_status = "";
             this.cxs_addby = "";
+            this.Cxs_prd = "";
             this.cxs_dateadd = DateTime.Now;
             this.cxs_updateby = "";
             this.cxs_updatedate = DateTime.Now;
 
         }
 
-        public clsCXS(int stu_id, string cou_id, float cxs_score,string cxs_prd ,string cxs_status, string cxs_addby, DateTime cxs_dateadd)
+        public clsCXS(int stu_id, string cou_id, float cxs_score, string cxs_prd, string cxs_status, string cxs_addby, DateTime cxs_dateadd)
         {
             this.stu_id = stu_id;
             this.cou_id = cou_id;
